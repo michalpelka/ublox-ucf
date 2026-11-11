@@ -1,0 +1,61 @@
+version = 1
+revision = 3
+requires-python = ">=3.12"
+
+[[package]]
+name = "pynmeagps"
+version = "1.1.9"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/24/46/62a9403eb6419ca7e46b6f79436589ce0cfedcbc96ccef14ac974d92ad36/pynmeagps-1.1.9.tar.gz", hash = "sha256:d2fce2611fc82a129539173678f218d08f62516c27a81c6d0684312a72638ca2", size = 100491, upload-time = "2026-11-07T07:56:51.338Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/51/10/ea7ef8785e1e5b244457588efc03ff29623caf5c2cc41cf5d97972fc765b/pynmeagps-1.1.9-py3-none-any.whl", hash = "sha256:0e949377b0a32e20ca038d2c253f24b646a4b1bf40a595e69e248cf0fefc9d20", size = 64856, upload-time = "2026-11-07T07:56:49.956Z" },
+]
+
+[[package]]
+name = "pyrtcm"
+version = "1.2.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pynmeagps" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f4/a9/14004faf62f859de7425e98dcab8a1c08b3c4cdcfaa33f3475403b118491/pyrtcm-1.2.1.tar.gz", hash = "sha256:3777be3f6b45fb6f3774ca26d36aa8a2f41eaac8a58f72f670df455974688f8c", size = 101332, upload-time = "2026-10-19T07:34:30.394Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d3/33/dcb9798233aac0a00418178870c74484172c9289328972622d14304613b0/pyrtcm-1.2.1-py3-none-any.whl", hash = "sha256:24aaeb568e76a5af5ee877a031a7c39547dba773bcf79b93a25a08eef7b68b6a", size = 43245, upload-time = "2026-10-19T07:34:28.108Z" },
+]
+
+[[package]]
+name = "pyserial"
+version = "3.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/1e/7d/ae3f0a63f41e4d2f6cb66a5b57197850f919f59e558159a4dd3a818f5082/pyserial-3.5.tar.gz", hash = "sha256:3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb", size = 159125, upload-time = "2020-11-23T03:59:15.045Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/bc/587a445451b253b285629263eb51c2d8e9bcea4fc97826266d186f96f558/pyserial-3.5-py2.py3-none-any.whl", hash = "sha256:c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0", size = 90585, upload-time = "2020-11-23T03:59:13.41Z" },
+]
+
+[[package]]
+name = "pyubx2"
+version = "1.4.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pynmeagps" },
+    { name = "pyrtcm" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ba/a0/cb5788e73d1a9d140a3b59b3e6f6f6d4d498b6f5663308c40576398ca0b9/pyubx2-1.4.1.tar.gz", hash = "sha256:4651875b39675c2a840b416d538eab3f43ac3cbc7a7bfb1a3035c48236df1e82", size = 179245, upload-time = "2026-10-29T08:39:22.239Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0a/dd/7fec4e17afd4e057a7061d5163873ec7d74f8e09d2d4d84f15abb68740d0/pyubx2-1.4.1-py3-none-any.whl", hash = "sha256:ccf0c20a5769cb650bf5fe97ac0fd62726936927adf2bb6118879d8e380efc63", size = 79525, upload-time = "2026-10-29T08:39:20.595Z" },
+]
+
+[[package]]
+name = "ublox-ucf"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "pyserial" },
+    { name = "pyubx2" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "pyserial", specifier = ">=3.5" },
+    { name = "pyubx2", specifier = ">=1.4.1" },
+]

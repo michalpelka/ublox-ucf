@@ -1,0 +1,21 @@
+[project]
+name = "ublox-ucf"
+version = "0.1.0"
+description = "Read and write u-blox receiver configuration as u-center 2 .ucf files"
+readme = "README.md"
+authors = [
+    { name = "MichalPelka", email = "michalpelka@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pyserial>=3.5",
+    "pyubx2>=1.4.1",
+]
+
+[project.scripts]
+ublox-ucf = "ublox_ucf:cli"
+ublox-ucf-write = "ublox_ucf.write:cli"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
